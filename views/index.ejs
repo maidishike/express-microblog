@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %> - Microblog</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style media="screen">
+      body{
+        padding-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <% include layout %>
+    <div id="container" class="container">
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <div class="hero-unit">
+        <h1>欢迎来到Microblog</h1>
+        <p>Microblog是一个基于Node.js的微博系统</p>
+        <p>
+          <a href="/login" class="btn btn-primary btn-large">登录</a>
+          <a href="/reg" class="btn btn-default btn-large">立即注册</a>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>1说</h2>
+          <p>
+            sdfsdfsdfsdfsdfdsf
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h2>2说</h2>
+          <p>
+            sdfsdfsdfsdfsdfdsf
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h2>3说</h2>
+          <p>
+            sdfsdfsdfsdfsdfdsf
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/jquery.js" charset="utf-8"></script>
+    <script src="/javascripts/bootstrap.js" charset="utf-8"></script>
+  </body>
+</html>

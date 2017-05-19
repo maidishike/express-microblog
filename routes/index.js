@@ -29,7 +29,10 @@ router.get('/login', function(req, res) {
 });
 router.post('/login', doLogin);
 router.get('/post', function(req, res) {
-  res.render('post', {title: '发表'});
+  res.render('post', {
+    title: '发表',
+    user: req.session.user
+  });
 });
 router.post('/post', function(req, res) {
 });

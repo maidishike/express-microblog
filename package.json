@@ -15,9 +15,10 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^0.4.1",
     "express-session": "^1.9.1",
     "mongodb": "^1.4.15",
-    "connect-flash": "^0.1.1"
+    "vue": "^2.3.3"
   }
 }

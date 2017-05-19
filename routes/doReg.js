@@ -27,22 +27,22 @@ function DoReg (req, res) {
   User.get(newUser.name, function(err, user) {
     if (err) {
       req.flash('error', err);
-      return res.redirect('/');
+      return res.send({'bool': false, 'error': err});
     };
     if (user) {
       req.flash('error', '用户已经存在');
-      return res.redirect('/reg'); // 返回注册页
+      return res.send({'bool': false, 'error': '用户已经存在'});
     }
 
     // 如果不存在则新增用户
     newUser.save(function(err, user) {
       if (err) {
         req.flash('error', err);
-        return res.redirect('/reg');
+        return res.send({'bool': false, 'error': err});
       }
       req.session.user = user; //用户信息存入session中
       req.flash('success', '注册成功');
-      res.send({'bool': true, 'msg': '注册成功'}); // 注册成功
+      return res.send({'bool': true, 'msg': '注册成功'}); // 注册成功
     });
   });
 }

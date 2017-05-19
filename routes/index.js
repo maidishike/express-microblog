@@ -1,6 +1,8 @@
 var express = require('express');
+const crypto = require('crypto');
 var router = express.Router();
-
+var User = require('../models/user');
+var doReg = require('./deReg');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: '首页' });
@@ -8,9 +10,10 @@ router.get('/', function(req, res, next) {
 router.get('/reg', function(req, res) {
   res.render('reg', {'title': '注册'});
 });
-router.post('/reg', function(res, req) {
-});
-router.get('/login', function(res, req) {
+
+router.post('/reg', doReg);
+
+router.get('/login', function(req, res) {
   res.render('login', {title: '登录'});
 });
 router.get('/post', function(req, res) {

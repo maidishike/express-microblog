@@ -4,6 +4,7 @@ bin-debug/
 bin-release/
 node_modules/
 data/
+public/.sass-cache/
 [Oo]bj/ # FlashDevelop obj
 [Bb]in/ # FlashDevelop bin
 

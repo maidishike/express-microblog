@@ -42,7 +42,7 @@ function DoReg (req, res) {
       }
       req.session.user = user; //用户信息存入session中
       req.flash('success', '注册成功');
-      res.redirect('/'); // 注册成功
+      res.send({'bool': true, 'msg': '注册成功'}); // 注册成功
     });
   });
 }

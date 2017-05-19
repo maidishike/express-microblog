@@ -13,7 +13,12 @@
   </header>
   <nav>
     <a href="/" title="主页">主页</a>
-    <a href="/login" title="登录">登录</a>
-    <a href="/reg" title="注册">注册</a>
+    <% if(user) { %>
+      <a href="/post" title="发表">发表</a>
+      <a href="/logout" title="注册">退出</a>
+    <% } else { %>
+      <a href="/login" title="登录">登录</a>
+      <a href="/reg" title="注册">注册</a>
+    <% } %>
   </nav>
   <article>

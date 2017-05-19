@@ -1,9 +1,9 @@
 <%- include ./layout/header %>
 这是发表页
 <form method="post">
-  <label for="userName">标题</label><input type="text" id="userName" name="title" /><br>
-  <label for="userPwd">密码</label><input type="password" id="userPwd" name="password" /><br>
-  <input type="submit" value="登录">
+  <label for="title">标题</label><input type="text" id="title" name="title" /><br>
+  <label for="post">内容</label><textarea id="post" name="post" rows="20" cols="80"></textarea><br>
+  <input type="submit" value="发表">
 </form>
 </article>
 <%- include ./layout/footer %>

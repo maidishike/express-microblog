@@ -7,6 +7,7 @@ var doReg = require('./doReg');
 var doLogin = require('./doLogin');
 var doLogout = require('./doLogout');
 var doPost = require('./doPost');
+var doUpload = require('./doUpload');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Post.get(null, function(err, posts) {
@@ -30,7 +31,7 @@ router.get('/reg', function(req, res) {
   });
 });
 
-router.post('/reg', checkNotLogin);
+router.post('/reg', checkLogin);
 router.post('/reg', doReg);
 
 router.get('/login', checkNotLogin);
@@ -57,6 +58,17 @@ router.post('/post', doPost);
 
 router.get('/logout', checkLogin);
 router.get('/logout', doLogout);
+
+// 上传页面
+router.get('/upload', checkLogin)
+router.get('/upload', function(req, res) {
+  res.render('upload', {
+    title: '上传图片',
+    user: req.session.user
+  });
+});
+
+router.post('/upload', doUpload);
 
 // 判断是否登录
 function checkLogin (req, res, next) {

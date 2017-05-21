@@ -1,7 +1,7 @@
 <%- include ./layout/header %>
 这是主页
 <% posts.forEach(function(post, index){ %>
-  <p><h2><a href="#"><%= post.title %></a></h2></p>
+  <p class="post-title"><h2><a href="#"><%= post.title %></a></h2></p>
   <p class="info">
     作者：<a href="#"><%= post.name %></a>
     日期：<a href="#"><%= post.time.minute %></a>
@@ -11,4 +11,5 @@
   </p>
 <% }) %>
 </article>
+</div>
 <%- include ./layout/footer %>

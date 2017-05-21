@@ -4,22 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog By Toby</title>
+  <title>Blog By Toby-<%= title %></title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  (function (doc, win) {
+      var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              if(clientWidth >= 640){
+                  docEl.style.fontSize = '40px';
+              }else{
+                  docEl.style.fontSize = 100 * (clientWidth / 1600) + 'px';
+              }
+          };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+  })(document, window);
+  </script>
 </head>
 <body>
-  <header>
-    <h1><%= title %></h1>
-  </header>
-  <nav>
-    <a href="/" title="主页">主页</a>
-    <% if(user) { %>
-      <a href="/post" title="发表">发表</a>
-      <a href="/logout" title="注册">退出</a>
-    <% } else { %>
-      <a href="/login" title="登录">登录</a>
-      <a href="/reg" title="注册">注册</a>
-    <% } %>
-  </nav>
-  <article id="app">
+  <div class="wrapper">
+    <header>
+      <div class="logo-box"><i></i><p>TobyBlob</p></div>
+    </header>
+    <nav>
+      <a href="/" title="主页">主页</a>
+      <% if(user) { %>
+        <a href="/post" title="发表">发表</a>
+        <a href="/logout" title="注册">退出</a>
+      <% } else { %>
+        <a href="/login" title="登录">登录</a>
+        <a href="/reg" title="注册">注册</a>
+      <% } %>
+    </nav>
+    <article id="app">

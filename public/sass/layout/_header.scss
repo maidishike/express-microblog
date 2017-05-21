@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.logo-box{
+  padding: 0.1rem;
+  position: relative;
+  i{
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('/images/LOGO.svg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  p{
+    position: absolute;
+    top: 0.1rem;
+    left: 2.2rem;
+    font-size: 1rem;
+    line-height: 2.2rem;
+    color: #1296db;
+  }
+}

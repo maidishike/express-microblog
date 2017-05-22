@@ -10,7 +10,7 @@ var doPost = require('./doPost');
 var doUpload = require('./doUpload');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Post.get(null, function(err, posts) {
+  Post.getAll(null, function(err, posts) {
     if (err) {
       posts = [];
     }
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 
 });
 
-router.get('/reg', checkNotLogin)
+router.get('/reg', checkNotLogin);
 router.get('/reg', function(req, res) {
   res.render('reg', {
     title: '注册',
@@ -31,7 +31,7 @@ router.get('/reg', function(req, res) {
   });
 });
 
-router.post('/reg', checkLogin);
+// router.post('/reg', checkLogin);
 router.post('/reg', doReg);
 
 router.get('/login', checkNotLogin);
@@ -42,7 +42,7 @@ router.get('/login', function(req, res) {
   });
 });
 
-router.post('/login', checkNotLogin);
+// router.post('/login', checkNotLogin);
 router.post('/login', doLogin);
 
 router.get('/post', checkLogin);
@@ -69,11 +69,20 @@ router.get('/upload', function(req, res) {
 });
 
 router.post('/upload', doUpload);
+router.get('/u/:name', function(err, user) {
+  // 检查用户名是否存在
+  User.get(req.params.name, function(err, user) {
+    if (!user) {
+      // 用户名不存在
+      return res.redirect('/');
+    }
+  });
+});
 
 // 判断是否登录
 function checkLogin (req, res, next) {
   if (!req.session.user) {
-    res.redirect('/login');
+    return res.redirect('/login');
   }
   next();
 }
@@ -81,7 +90,7 @@ function checkLogin (req, res, next) {
 // 判断是否已经登录
 function checkNotLogin (req, res, next) {
   if (req.session.user) {
-    res.redirect('back'); // 返回之前的页面
+    return res.redirect('back'); // 返回之前的页面
   }
   next();
 }

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import "compass/reset";
 @import "./layout/_header";
+a{
+  text-decoration: none;
+}
 .wrapper{
   max-width: 640px;
   margin: 0 auto;

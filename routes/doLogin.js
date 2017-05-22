@@ -10,7 +10,7 @@ function DoLogin (req, res) {
   User.get(req.body.name, function(err, user) {
     if (!user) {
       req.flash('error', '用户不存在');
-      return res.direct('/login'); //用户不存在
+      return res.redirect('/login'); //用户不存在
     }
 
     // 检查密码是否一致

@@ -8,6 +8,11 @@ a{
   max-width: 640px;
   margin: 0 auto;
   word-wrap: break-word;
+  .article{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
 }
 nav{
   margin-top: 2.1rem;

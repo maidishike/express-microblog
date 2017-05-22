@@ -8,7 +8,10 @@ var doLogin = require('./doLogin');
 var doLogout = require('./doLogout');
 var doPost = require('./doPost');
 var doUpload = require('./doUpload');
+var doUView = require('./doUView');
+var DoTView = require('./DoTView');
 /* GET home page. */
+
 router.get('/', function(req, res, next) {
   Post.getAll(null, function(err, posts) {
     if (err) {
@@ -69,16 +72,12 @@ router.get('/upload', function(req, res) {
 });
 
 router.post('/upload', doUpload);
-router.get('/u/:name', function(err, user) {
-  // 检查用户名是否存在
-  User.get(req.params.name, function(err, user) {
-    if (!user) {
-      // 用户名不存在
-      return res.redirect('/');
-    }
-  });
-});
 
+// 查看该作者的所有博客
+router.get('/u/:name', doUView);
+
+// 查看某篇博客
+router.get('/u/:name/:day/:title', DoTView)
 // 判断是否登录
 function checkLogin (req, res, next) {
   if (!req.session.user) {

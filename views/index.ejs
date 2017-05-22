@@ -1,14 +1,21 @@
 <%- include ./layout/header %>
 这是主页
 <% posts.forEach(function(post, index){ %>
-  <p class="post-title"><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
-  <p class="info">
-    作者：<a href="/u/<%= post.name %>"><%= post.name %></a>
-    日期：<%= post.time.minute %>
-  </p>
-  <p class="post">
-    <%- post.post %>
-  </p>
+  <div class="article">
+    <p class="post-title"><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
+    <p class="info">
+      作者：<a href="/u/<%= post.name %>"><%= post.name %></a>
+      日期：<%= post.time.minute %>
+    </p>
+    <p class="post">
+      <%- post.post %>
+    </p>
+    <% if(user != null) { %>
+      <% if(post.name == user.name) { %>
+      <a href="javascript:;">删除</a>
+      <% } %>
+    <% } %>
+    </div>
 <% }) %>
 </article>
 </div>

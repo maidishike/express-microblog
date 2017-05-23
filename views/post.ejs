@@ -1,9 +1,16 @@
-<%- include ./layout/header %>
-这是发表页
+<%- include ./layout/asset/head.ejs %>
+<link rel="stylesheet" href="/stylesheets/post.css">
+<%- include ./layout/asset/body.ejs %>
 <form method="post">
-  <label for="title">标题</label><input type="text" id="title" name="title" /><br>
-  <label for="post">内容</label><textarea id="post" name="post" rows="20" cols="80"></textarea><br>
-  <input type="submit" value="发表">
+  <div class="form-group">
+    <label for="title">标题</label>
+    <input class="form-control" type="text" id="title" name="title" />
+  </div>
+  <div class="form-group">
+    <label for="post">内容</label>
+    <textarea id="post" class="form-control" name="post" rows="20" cols="80"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary w100" >发表</button>
 </form>
 </article>
 </div>

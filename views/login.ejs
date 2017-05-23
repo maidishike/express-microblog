@@ -1,9 +1,16 @@
-<%- include ./layout/header %>
-这是登录页
+<%- include ./layout/asset/head.ejs %>
+<link rel="stylesheet" href="/stylesheets/login.css">
+<%- include ./layout/asset/body.ejs %>
 <form method="post">
-  <label for="userName">用户名</label><input type="text" id="userName" name="name" /><br>
-  <label for="userPwd">密码</label><input type="password" id="userPwd" name="password" /><br>
-  <input type="submit" value="登录">
+  <div class="form-group">
+    <label for="userName">用户名</label>
+    <input class="form-control" type="text" id="userName" name="name" />
+  </div>
+  <div class="form-group">
+    <label for="userPwd">密码</label>
+    <input class="form-control" type="password" id="userPwd" name="password" />
+  </div>
+  <button type="submit" class="btn btn-primary w100">登录</button>
 </form>
 </article>
 </div>

@@ -302,3 +302,14 @@ form .form-control {
   -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/* line 3, ../sass/post.scss */
+article {
+  background-color: #fff;
+  padding-top: 1.5rem;
+}
+
+/* line 8, ../sass/post.scss */
+form textarea {
+  min-height: 10rem;
+}

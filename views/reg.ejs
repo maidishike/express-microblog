@@ -1,11 +1,24 @@
-<%- include ./layout/header %>
-这是注册页
+<%- include ./layout/asset/head.ejs %>
+<link rel="stylesheet" href="/stylesheets/register.css">
+<%- include ./layout/asset/body.ejs %>
 <form id="register" method="post">
-  <label for="userName">用户名</label><input type="text" id="userName" name="name" value="" /><br>
-  <label for="userPwd">密码</label><input type="password" id="userPwd" name="password" value="" /><br>
-  <label for="userConfirmPwd">确认密码</label><input type="password" name="password-repeat" id="userConfirmPwd" value="" /><br>
-  <label for="userEmail">邮箱</label><input type="email" id="userEmail" name="email" /><br>
-  <input id="submit" type="button" value="注册">
+  <div class="form-group">
+    <label for="userName">用户名</label>
+    <input type="text" class="form-control" id="userName" name="name" value="" />
+  </div>
+  <div class="form-group">
+    <label for="userPwd">密码</label>
+    <input type="password" class="form-control" id="userPwd" name="password" value="" />
+  </div>
+  <div class="form-group">
+    <label for="userConfirmPwd">确认密码</label>
+    <input class="form-control" type="password" name="password-repeat" id="userConfirmPwd" value="" />
+  </div>
+  <div class="form-group">
+    <label for="userEmail">邮箱</label>
+    <input class="form-control" type="email" id="userEmail" name="email" />
+  </div>
+  <button id="submit" class="btn btn-primary w100" type="button">注册</button>
 </form>
 </article>
 </div>

@@ -1,5 +1,6 @@
 var express = require('express');
 const crypto = require('crypto');
+const url = require('url');
 var router = express.Router();
 var User = require('../models/user');
 var Post = require('../models/post');
@@ -13,6 +14,7 @@ var DoTView = require('./DoTView');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
+  var pathname = url.parse(req.url).pathname;
   Post.getAll(null, function(err, posts) {
     if (err) {
       posts = [];
@@ -20,7 +22,10 @@ router.get('/', function(req, res, next) {
     res.render('index', {
       title: '首页',
       user: req.session.user,
-      posts: posts
+      posts: posts,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString(),
+      pathname: pathname
     });
   })
 
@@ -28,9 +33,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/reg', checkNotLogin);
 router.get('/reg', function(req, res) {
+  var pathname = url.parse(req.url).pathname;
   res.render('reg', {
     title: '注册',
-    user: req.session.user
+    user: req.session.user,
+    success: req.flash('success').toString(),
+    error: req.flash('error').toString(),
+    pathname: pathname
   });
 });
 
@@ -39,9 +48,13 @@ router.post('/reg', doReg);
 
 router.get('/login', checkNotLogin);
 router.get('/login', function(req, res) {
+  var pathname = url.parse(req.url).pathname;
   res.render('login', {
     title: '登录',
-    user: req.session.user
+    user: req.session.user,
+    success: req.flash('success').toString(),
+    error: req.flash('error').toString(),
+    pathname: pathname
   });
 });
 
@@ -50,9 +63,13 @@ router.post('/login', doLogin);
 
 router.get('/post', checkLogin);
 router.get('/post', function(req, res) {
+  var pathname = url.parse(req.url).pathname;
   res.render('post', {
     title: '发表',
-    user: req.session.user
+    user: req.session.user,
+    success: req.flash('success').toString(),
+    error: req.flash('error').toString(),
+    pathname: pathname
   });
 });
 
@@ -67,7 +84,9 @@ router.get('/upload', checkLogin)
 router.get('/upload', function(req, res) {
   res.render('upload', {
     title: '上传图片',
-    user: req.session.user
+    user: req.session.user,
+    success: req.flash('success').toString(),
+    error: req.flash('error').toString()
   });
 });
 

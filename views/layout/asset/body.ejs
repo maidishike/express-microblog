@@ -1,0 +1,42 @@
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+(function (doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if(clientWidth >= 640){
+                docEl.style.fontSize = '40px';
+            }else{
+                docEl.style.fontSize = 100 * (clientWidth / 1600) + 'px';
+            }
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+</head>
+<body>
+  <div class="wrapper">
+    <% if(success) {%>
+      <div class="layer layer-success"><%- success %></div>
+    <% } %>
+    <% if(error) {%>
+      <div class="layer layer-error"><%- error %></div>
+    <% } %>
+    <header>
+      <div class="logo-box"><i></i><p>TobyBlob</p></div>
+    </header>
+    <nav>
+      <a href="/" <% if(pathname && pathname == '/') { %>  class="cur" <% } %> title="主页">主页</a>
+      <% if(user) { %>
+        <a <% if(pathname && pathname == '/post') { %>  class="cur" <% } %> href="/post" title="发表">发表</a>
+        <a href="/logout" title="注册">退出</a>
+      <% } else { %>
+        <a href="/login" <% if(pathname && pathname == '/login') { %>  class="cur" <% } %> title="登录">登录</a>
+        <a href="/reg" <% if(pathname && pathname == '/reg') { %>  class="cur" <% } %> title="注册">注册</a>
+      <% } %>
+    </nav>
+    <article id="app">

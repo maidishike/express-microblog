@@ -1,7 +1,10 @@
 @charset "UTF-8";
+@import "compass/css3";
 .logo-box{
   padding: 0.1rem;
   position: relative;
+  height: 2.2rem;
+  background-color: #fff;
   i{
     position: absolute;
     top: 0.1rem;
@@ -20,6 +23,19 @@
     left: 2.2rem;
     font-size: 1rem;
     line-height: 2.2rem;
-    color: #1296db;
+    color: $bg_nav;
+  }
+}
+nav{
+  @include display-flex;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  background-color: $bg_nav;
+  a{
+    @include flex(1 1 0);
+    text-align: center;
+    font-size: .8rem;
+    color: $color_inactive;
   }
 }

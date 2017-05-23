@@ -14,7 +14,9 @@ function DoViewByName(req, res) {
       res.render('user', {
         title: user.name,
         user: req.session.user,
-        posts: posts
+        posts: posts,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
       });
     });
 

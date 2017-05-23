@@ -302,3 +302,8 @@ form .form-control {
   -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/* line 5, ../sass/index.scss */
+.article:first-child {
+  margin-top: 0;
+}

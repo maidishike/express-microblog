@@ -12,7 +12,9 @@ function DoViewByTitle (req, res) {
       res.render('article', {
         title: post.title,
         user: req.session.user,
-        post: post
+        post: post,
+        success: req.flash('success').toString(),
+        error: req.flash('error').toString()
       });
     });
   });

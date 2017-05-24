@@ -16,7 +16,8 @@ function DoViewByName(req, res) {
         user: req.session.user,
         posts: posts,
         success: req.flash('success').toString(),
-        error: req.flash('error').toString()
+        error: req.flash('error').toString(),
+        pathname: ''
       });
     });
 

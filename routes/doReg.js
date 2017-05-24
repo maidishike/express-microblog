@@ -40,7 +40,7 @@ function DoReg (req, res) {
         req.flash('error', err);
         return res.send({'bool': false, 'error': err});
       }
-      req.session.user = user; //用户信息存入session中
+      req.session.user = user[0]; //用户信息存入session中
       req.flash('success', '注册成功');
       return res.send({'bool': true, 'msg': '注册成功'}); // 注册成功
     });

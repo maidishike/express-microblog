@@ -14,7 +14,8 @@ function DoViewByTitle (req, res) {
         user: req.session.user,
         post: post,
         success: req.flash('success').toString(),
-        error: req.flash('error').toString()
+        error: req.flash('error').toString(),
+        pathname: ''
       });
     });
   });

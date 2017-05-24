@@ -20,7 +20,6 @@ function DoLogin (req, res) {
     }
 
     // 用户名密码都匹配
-
     req.session.user = user;
     req.flash('success', '登录成功');
     res.redirect('/');

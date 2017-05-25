@@ -12,6 +12,11 @@
       <a class="post-author" href="/u/<%= post.name %>"><%= post.name %></a>发布于-
       <span class="post-day"><%= post.time.minute %></span>
     </p>
+    <% if(user && (post.name == user.name)) { %>
+    <div class="edit-group">
+      <a class="btn-edit" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a>
+    </div>
+    <% } %>
   </div>
 </article>
 </div>

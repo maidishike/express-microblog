@@ -1,4 +1,4 @@
-/* line 5, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,57 +20,65 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, E:/software/tools/work_tools/Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../software/tools/work_tools/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /* line 3, ../sass/layout/_header.scss */
+header {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 6, ../sass/layout/_header.scss */
 .logo-box {
   padding: 0.1rem;
   position: relative;
   height: 2.2rem;
   background-color: #fff;
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
 }
-/* line 8, ../sass/layout/_header.scss */
+/* line 12, ../sass/layout/_header.scss */
 .logo-box i {
   position: absolute;
   top: 0.1rem;
@@ -83,7 +91,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 20, ../sass/layout/_header.scss */
+/* line 24, ../sass/layout/_header.scss */
 .logo-box p {
   position: absolute;
   top: 0.1rem;
@@ -93,7 +101,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #005F3C;
 }
 
-/* line 29, ../sass/layout/_header.scss */
+/* line 33, ../sass/layout/_header.scss */
+.user-name {
+  background: #fff;
+  line-height: 2.2rem;
+}
+
+/* line 37, ../sass/layout/_header.scss */
 nav {
   display: -webkit-flex;
   display: flex;
@@ -102,7 +116,7 @@ nav {
   line-height: 2rem;
   background-color: #005F3C;
 }
-/* line 35, ../sass/layout/_header.scss */
+/* line 43, ../sass/layout/_header.scss */
 nav a {
   -webkit-flex: 1 1 0;
   flex: 1 1 0;
@@ -301,6 +315,22 @@ form .form-control {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* line 139, ../sass/layout/_layout.scss */
+.edit-group {
+  position: relative;
+  height: 1rem;
+}
+/* line 142, ../sass/layout/_layout.scss */
+.edit-group .btn-edit {
+  position: absolute;
+  display: block;
+  font-size: 0.7rem;
+  color: #999;
+  top: -0.2rem;
+  right: -0.5rem;
+  padding: 0.5rem;
 }
 
 /* line 3, ../sass/login.scss */

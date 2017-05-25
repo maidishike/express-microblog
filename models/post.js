@@ -118,3 +118,32 @@ Post.getOne = function(name, day, title, callback) {
     });
   });
 };
+
+// 删除一篇文章
+Post.remove = function(name, day, title, callback) {
+  mongodb.open((err, db) => {
+    if (err) {
+      return callback(err);
+    }
+    // 读取post集合
+    db.collection('posts', (err, collection) => {
+      if (err) {
+        mongodb.close();
+        return callback(err);
+      }
+
+      // 根据用户名、日期和标题查找并删除一篇文章
+      collection.remove({
+        name: name,
+        'time.day': day,
+        title: title
+      }, {w: 1}, (err) => {
+        mongodb.close();
+        if (err) {
+          return callback(err);
+        }
+        callback(null);
+      });
+    });
+  });
+}

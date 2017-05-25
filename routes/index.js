@@ -10,7 +10,8 @@ var doLogout = require('./doLogout');
 var doPost = require('./doPost');
 var doUpload = require('./doUpload');
 var doUView = require('./doUView');
-var DoTView = require('./DoTView');
+var DoTView = require('./doTView');
+var doDelete = require('./doDelete');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -105,6 +106,9 @@ function checkLogin (req, res, next) {
   next();
 }
 
+// 删除某篇文章
+router.get('/remove/:name/:day/:title', checkLogin);
+router.get('/remove/:name/:day/:title', doDelete);
 // 判断是否已经登录
 function checkNotLogin (req, res, next) {
   if (req.session.user) {

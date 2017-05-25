@@ -136,3 +136,16 @@ form{
     @include transition(border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s);
   }
 }
+.edit-group{
+  position: relative;
+  height: 1rem;
+  .btn-edit{
+    position: absolute;
+    display: block;
+    font-size: 0.7rem;
+    color: $color_day;
+    top: -0.2rem;
+    right: -0.5rem;
+    padding: 0.5rem;
+  }
+}

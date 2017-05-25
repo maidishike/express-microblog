@@ -317,6 +317,22 @@ form .form-control {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/* line 139, ../sass/layout/_layout.scss */
+.edit-group {
+  position: relative;
+  height: 1rem;
+}
+/* line 142, ../sass/layout/_layout.scss */
+.edit-group .btn-edit {
+  position: absolute;
+  display: block;
+  font-size: 0.7rem;
+  color: #999;
+  top: -0.2rem;
+  right: -0.5rem;
+  padding: 0.5rem;
+}
+
 /* line 3, ../sass/post.scss */
 article {
   background-color: #fff;

@@ -12,6 +12,7 @@ var doUpload = require('./doUpload');
 var doUView = require('./doUView');
 var DoTView = require('./doTView');
 var doDelete = require('./doDelete');
+var doEdit = require('./doEdit');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -106,6 +107,13 @@ function checkLogin (req, res, next) {
   next();
 }
 
+// 编辑某篇文章
+router.get('/edit/:name/:day/:title', checkLogin);
+router.get('/edit/:name/:day/:title', doEdit.DoEdit);
+
+// 编辑某篇文章
+router.post('/edit/:name/:day/:title', checkLogin);
+router.post('/edit/:name/:day/:title', doEdit.DoUpdate);
 // 删除某篇文章
 router.get('/remove/:name/:day/:title', checkLogin);
 router.get('/remove/:name/:day/:title', doDelete);

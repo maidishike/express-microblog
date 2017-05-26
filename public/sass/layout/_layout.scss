@@ -129,6 +129,7 @@ form{
     width: 100%;
     height: 1.7rem;
     font-size: 0.7rem;
+    font-family: inherit;
     padding: 0.3rem 0.6rem;
     @include border-radius(3px);
     border: 1px solid #ccc;
@@ -139,7 +140,7 @@ form{
 .edit-group{
   position: relative;
   height: 1rem;
-  .btn-edit{
+  .btn-handle{
     position: absolute;
     display: block;
     font-size: 0.7rem;
@@ -147,5 +148,8 @@ form{
     top: -0.2rem;
     right: -0.5rem;
     padding: 0.5rem;
+  }
+  .btn-handle.btn-edit{
+    right: 2rem;
   }
 }

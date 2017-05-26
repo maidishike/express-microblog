@@ -1,23 +1,27 @@
 <%- include ./layout/asset/head.ejs %>
 <link rel="stylesheet" href="/stylesheets/index.css">
 <%- include ./layout/asset/body.ejs %>
-  <div class="article">
-    <h2 class="post-title">
-      <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
-    </h2>
-    <div class="post-content">
-      <%- post.post %>
+  <% if(post) { %>
+    <div class="article">
+      <h2 class="post-title">
+        <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+      </h2>
+      <div class="post-content">
+        <%- post.post %>
+      </div>
+      <p class="post-info">
+        <a class="post-author" href="/u/<%= post.name %>"><%= post.name %></a>发布于-
+        <span class="post-day"><%= post.time.minute %></span>
+      </p>
+      <% if(user && (post.name == user.name)) { %>
+      <div class="edit-group">
+        <a class="btn-delete btn-handle" data-name="<%= post.name %>" data-day="<%= post.time.day %>" data-title="<%= post.title %>">删除</a>
+        <a class="btn-edit btn-handle" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a>
+      </div>
+      <% } %>
     </div>
-    <p class="post-info">
-      <a class="post-author" href="/u/<%= post.name %>"><%= post.name %></a>发布于-
-      <span class="post-day"><%= post.time.minute %></span>
-    </p>
-    <% if(user && (post.name == user.name)) { %>
-    <div class="edit-group">
-      <a class="btn-edit" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a>
-    </div>
-    <% } %>
-  </div>
+  <% } %>
 </article>
 </div>
+<script src="/js/delete.js" charset="utf-8"></script>
 <%- include ./layout/footer %>

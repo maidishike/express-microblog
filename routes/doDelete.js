@@ -5,10 +5,12 @@ function DoDelete (req, res) {
   Post.remove(curUser.name, req.params.day, req.params.title, (err) => {
     if (err) {
       req.flash('error', err);
-      return res.redirect('back');
+      res.send({'bool':false, 'msg': err})
+      // return res.redirect('back');
     }
     req.flash('success', '删除成功');
-    res.redirect('/');
+    res.send({'bool':true, 'msg': '删除成功'})
+    // res.redirect('/');
   });
 }
 

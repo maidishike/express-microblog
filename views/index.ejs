@@ -3,23 +3,21 @@
 <%- include ./layout/asset/body.ejs %>
 <% posts.forEach(function(post, index){ %>
   <div class="article">
-    <h2 class="post-title">
-      <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
-    </h2>
-    <!-- <div class="post-content">
-      <%- post.post %>
-    </div> -->
-    <p class="post-info">
-      <a class="post-author" href="/u/<%= post.name %>"><%= post.name %></a>发布于-
-      <span class="post-day"><%= post.time.minute %></span>
-    </p>
-    <!-- <% if(user != null) { %>
-      <% if(post.name == user.name) { %>
-      <a href="javascript:;">删除</a>
-      <% } %>
-    <% } %> -->
+    <div class="article-item">
+      <h2 class="post-title">
+        <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a>
+      </h2>
+      <!-- <div class="post-content">
+        <%- post.post %>
+      </div> -->
+      <p class="post-info">
+        <a class="post-author" href="/u/<%= post.name %>"><%= post.name %></a>发布于-
+        <span class="post-day"><%= post.time.minute %></span>
+      </p>
     </div>
+  </div>
 <% }) %>
 </article>
+<%- include ./layout/paging %>
 </div>
 <%- include ./layout/footer %>

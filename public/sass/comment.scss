@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@import "compass/css3";
+@import "./layout/_theme";
+.comment-box{
+  padding: 0.5rem;
+  background: #fff;
+  font-size: 0.7rem;
+  .comments{
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+  .comment-content{
+
+  }
+  .comment-time{
+    color: $color_day;
+    margin-top: 0.25rem;
+    .comment-author{
+      color: $color_author;
+    }
+  }
+  .comment-form{
+    .comment-issue{
+      @include display-flex;
+      margin-bottom: 0.5rem;
+      min-height: 4.4rem;
+    }
+    .user-icon{
+
+    }
+    .comment-text{
+      @include flex(1 1 0);
+      height: auto;
+    }
+    .issue-group{
+      text-align: right;
+    }
+  }
+}

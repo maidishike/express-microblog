@@ -1,0 +1,25 @@
+<div class="comment-box">
+  <hr>
+  <% post.comments.forEach(function (comment, index) { %>
+    <div class="comments">
+      <div class="comment-content"> <%- comment.content %> </div>
+      <p class="comment-time">
+        <a class="comment-author" href="<%= comment.website %>"><%= comment.name %></a>
+        <span>评论于&nbsp;<%= comment.time %></span>
+      </p>
+    </div>
+  <%}) %>
+  <form class="comment-form" method="post">
+    <div class="comment-issue">
+      <% if(user){ %>
+        <a href="/u/<%= user.name %>" class="user-icon"></a>
+      <% }else{ %>
+        <a href="/login" class="user-icon"></a>
+      <% } %>
+      <textarea class="form-control comment-text" rows="4" name="content"></textarea><br>
+    </div>
+    <div class="issue-group">
+      <button type="submit" class="btn btn-primary" name="button">发布评论</button>
+    </div>
+  </form>
+</div>

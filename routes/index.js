@@ -13,11 +13,14 @@ var doUView = require('./doUView');
 var DoTView = require('./doTView');
 var doDelete = require('./doDelete');
 var doEdit = require('./doEdit');
+var doComment =  require('./doComment');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
   var pathname = url.parse(req.url).pathname;
-  Post.getAll(null, function(err, posts) {
+  var page = req.query.p ? parseInt(req.query.p) : 1;
+  console.log(page);
+  Post.getTen(null, page, function(err, posts, total) {
     if (err) {
       posts = [];
     }
@@ -25,6 +28,9 @@ router.get('/', function(req, res, next) {
       title: '首页',
       user: req.session.user,
       posts: posts,
+      page: page,
+      isFirstPage: (page - 1) == 0,
+      isLastPage: ((page -1 ) * 10 + posts.length) == total,
       success: req.flash('success').toString(),
       error: req.flash('error').toString(),
       pathname: pathname
@@ -117,6 +123,9 @@ router.post('/edit/:name/:day/:title', doEdit.DoUpdate);
 // 删除某篇文章
 router.get('/remove/:name/:day/:title', checkLogin);
 router.get('/remove/:name/:day/:title', doDelete);
+
+// 新增评论
+router.post('/u/:name/:day/:title', doComment);
 // 判断是否已经登录
 function checkNotLogin (req, res, next) {
   if (req.session.user) {

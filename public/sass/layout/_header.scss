@@ -34,6 +34,19 @@ header{
   background: #fff;
   line-height: 2.2rem;
 }
+.user-icon{
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  background-image: url('/images/user-icon.png');
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0.3rem;
+  right: 0.3rem;
+}
 nav{
   @include display-flex;
   width: 100%;

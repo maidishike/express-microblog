@@ -1,0 +1,43 @@
+/* line 11, ../sass/layout/_theme.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 4, ../sass/comment.scss */
+.comment-box {
+  padding: 0.5rem;
+  background: #fff;
+  font-size: 0.7rem;
+}
+/* line 8, ../sass/comment.scss */
+.comment-box .comments {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+/* line 16, ../sass/comment.scss */
+.comment-box .comment-time {
+  color: #999;
+  margin-top: 0.25rem;
+}
+/* line 19, ../sass/comment.scss */
+.comment-box .comment-time .comment-author {
+  color: #009a61;
+}
+/* line 24, ../sass/comment.scss */
+.comment-box .comment-form .comment-issue {
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 0.5rem;
+  min-height: 4.4rem;
+}
+/* line 32, ../sass/comment.scss */
+.comment-box .comment-form .comment-text {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  height: auto;
+}
+/* line 36, ../sass/comment.scss */
+.comment-box .comment-form .issue-group {
+  text-align: right;
+}

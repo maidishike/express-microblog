@@ -1,5 +1,6 @@
 <%- include ./layout/asset/head.ejs %>
 <link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/comment.css">
 <%- include ./layout/asset/body.ejs %>
   <% if(post) { %>
     <div class="article">
@@ -22,6 +23,7 @@
     </div>
   <% } %>
 </article>
+<%- include ./comment %>
 </div>
 <script src="/js/delete.js" charset="utf-8"></script>
 <%- include ./layout/footer %>

@@ -28,7 +28,7 @@
     <% } %>
     <header>
       <div class="logo-box"><i></i><p>TobyBlob</p></div>
-      <div class="user-name"><% if(user) {%><%= user.name %><% } %></div>
+      <div class="user-name"><% if(user) {%><a href="/u/<%= user.name %>" class="user-icon"></a><% } %>  </div>
     </header>
     <nav>
       <a href="/" <% if(pathname && pathname == '/') { %>  class="cur" <% } %> title="主页">主页</a>

@@ -14,7 +14,10 @@ a{
   max-width: 640px;
   margin: 0 auto;
   word-wrap: break-word;
-  background-color: #f5f5f5;
+  // background-color: #f5f5f5;
+}
+textarea{
+  resize: vertical;
 }
 .layer{
   position: fixed;
@@ -49,12 +52,16 @@ a{
 }
 
 article{
-  padding: .5rem;
+  padding-top: .5rem;
 }
 .article{
   padding: .5rem;
   background-color: #fff;
   margin-top: .5rem;
+  .article-item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
   .post-title{
     color: $color_black;
     a{
@@ -115,6 +122,7 @@ article{
   width: 100%;
 }
 form{
+  padding: 0.5rem;
   .form-group{
     margin-bottom: 0.75rem;
   }

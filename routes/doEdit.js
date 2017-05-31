@@ -6,7 +6,6 @@ function DoEdit (req, res) {
   Post.edit(curUser.name, req.params.day, req.params.title, (err, post) =>{
     if (err) {
       req.flash('err', err);
-      console.log(err);
       return res.redirect('back');
     }
     if (post == null) {

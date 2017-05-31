@@ -72,3 +72,29 @@ User.get = function(name, callback) {
 
   });
 };
+
+// 更新用户头像
+User.upload = function(name, avatar, callback) {
+ mongodb.open(function(err, db) {
+   if (err) {
+     return callback(err);
+   }
+   db.collection('users', function(err, collection) {
+     if (err) {
+       mongodb.close();
+       return callback(err);
+     }
+     collection.update({
+       'name': name
+     }, {
+       $set: {'avatar': avatar}
+     }, (err) => {
+       mongodb.close();
+       if (err) {
+         return callback(err);
+       }
+       callback(null);
+     })
+   });
+ })
+}

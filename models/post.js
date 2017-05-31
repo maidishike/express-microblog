@@ -181,7 +181,6 @@ Post.update = function(name, day, title, post, callback) {
         if (err) {
           return callback(err);
         }
-        console.log(3);
         callback(null);
       });
     });

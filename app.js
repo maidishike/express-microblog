@@ -22,9 +22,9 @@ app.set('view engine', 'ejs');
 app.use(flash());
 
 app.use(multer({
-  dest: './public/images',
+  dest: './public/images/upload',
   rename: function(fieldname, filename) {
-    return filename;
+    return filename + '-' + Date.now();
   }
 }));
 

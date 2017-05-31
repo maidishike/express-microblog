@@ -21,7 +21,7 @@ function DoReg (req, res) {
     name: req.body.name,
     password: password,
     email: req.body.email,
-    avatar: '/images/user-icon.png'
+    avatar: 'user-icon.png'
   });
 
   // 检查用户是否存在

@@ -23,7 +23,7 @@ Comment.prototype.save = function(callback) {
     db.collection('posts', (err, collection) => {
       if (err) {
         mongodb.close();
-        return callback(err)
+        return callback(err);
       }
 
       // 通过用户名、时间、标题查找文档，并且把一条留言对象添加到comments数组里

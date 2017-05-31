@@ -3,17 +3,26 @@
 <%- include ./layout/asset/body.ejs %>
  <div class="profile">
    <div class="profile-avatar">
-    <a href="/u/<%= user.name %>" style="background-image:url(<%= user.avatar %>)" class="user-icon"></a>
-    <input type="file" name="avatar" class="input-avatar">
+     <a href="javascript:;" id="btn_avatar" style="background-image:url(/images/upload/<%= user.avatar %>)" class="user-icon"></a>
+     <% if(user.name == username) { %>
+        <form method='post' id="avatar_form" enctype="multipart/form-data" action="/upload">
+          <input type="hidden" name="name" value="<%= user.name %>" />
+          <input type="file" id="input_avatar" accept="image/jpeg, image/gif, image/png, image/jpg" name="avatar" class="input-avatar">
+        </form>
+     <% }%>
    </div>
    <div class="profile-info">
-     <p><%= user.name %></p>
+     <p><%= username %></p>
    </div>
  </div>
  <div class="profile-group">
-   <a href="/u/<%= user.name %>/articles" class="profile-me">
+   <a href="/u/<%= username %>/articles" class="profile-me">
      <i class="icon icon-article"></i>
-     <p class="profile-link" >我的文章</p>
+     <% if(user.name == username) { %>
+        <p class="profile-link" >我的文章</p>
+      <% }else{ %>
+        <p class="profile-link" >Ta的文章</p>
+      <% } %>
    </a>
    <a href="/u/<%= user.name %>/articles" class="profile-me">
      <i class="icon icon-comment"></i>
@@ -22,4 +31,5 @@
  </div>
 </article>
 </div>
+<script src="/js/user.js" charset="utf-8"></script>
 <%- include ./layout/footer %>

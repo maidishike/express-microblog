@@ -12,7 +12,7 @@
   <form class="comment-form" method="post">
     <div class="comment-issue">
       <% if(user){ %>
-        <a href="/u/<%= user.name %>" style="background-image:url(<%= user.avatar %>)" class="user-icon"></a>
+        <a href="/u/<%= user.name %>" style="background-image:url(/images/upload/<%= user.avatar %>)" class="user-icon"></a>
       <% }else{ %>
         <a href="/login" class="user-icon"></a>
       <% } %>

@@ -20,7 +20,6 @@ var userInfo =  require('./users');
 router.get('/', function(req, res, next) {
   var pathname = url.parse(req.url).pathname;
   var page = req.query.p ? parseInt(req.query.p) : 1;
-  console.log(page);
   Post.getTen(null, page, function(err, posts, total) {
     if (err) {
       posts = [];
@@ -103,18 +102,16 @@ router.post('/upload', doUpload);
 
 // 获取用户信息
 router.get('/u/:name', userInfo.doViewUserInfo);
+
 // 查看该作者的所有博客
 router.get('/u/:name/articles', doUView);
 
+// 查看用户所有评论
+
+
 // 查看某篇博客
 router.get('/u/:name/:day/:title', DoTView)
-// 判断是否登录
-function checkLogin (req, res, next) {
-  if (!req.session.user) {
-    return res.redirect('/login');
-  }
-  next();
-}
+
 
 // 编辑某篇文章
 router.get('/edit/:name/:day/:title', checkLogin);
@@ -129,6 +126,15 @@ router.get('/remove/:name/:day/:title', doDelete);
 
 // 新增评论
 router.post('/u/:name/:day/:title', doComment);
+
+// 判断是否登录
+function checkLogin (req, res, next) {
+  if (!req.session.user) {
+    return res.redirect('/login');
+  }
+  next();
+}
+
 // 判断是否已经登录
 function checkNotLogin (req, res, next) {
   if (req.session.user) {

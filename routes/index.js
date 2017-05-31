@@ -14,6 +14,7 @@ var DoTView = require('./doTView');
 var doDelete = require('./doDelete');
 var doEdit = require('./doEdit');
 var doComment =  require('./doComment');
+var userInfo =  require('./users');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -100,8 +101,10 @@ router.get('/upload', function(req, res) {
 
 router.post('/upload', doUpload);
 
+// 获取用户信息
+router.get('/u/:name', userInfo.doViewUserInfo);
 // 查看该作者的所有博客
-router.get('/u/:name', doUView);
+router.get('/u/:name/articles', doUView);
 
 // 查看某篇博客
 router.get('/u/:name/:day/:title', DoTView)

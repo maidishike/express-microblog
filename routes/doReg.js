@@ -20,7 +20,8 @@ function DoReg (req, res) {
   var newUser = new User({
     name: req.body.name,
     password: password,
-    email: req.body.email
+    email: req.body.email,
+    avatar: '/images/user-icon.png'
   });
 
   // 检查用户是否存在

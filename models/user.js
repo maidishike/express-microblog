@@ -4,6 +4,7 @@ function User(user) {
   this.name = user.name;
   this.password = user.password;
   this.email = user.email;
+  this.avatar = user.avatar;
 }
 
 module.exports = User;
@@ -14,7 +15,8 @@ User.prototype.save = function (callback) {
   var user = {
     name: this.name,
     password: this.password,
-    email: this.email
+    email: this.email,
+    avatar: this.avatar
   };
 
   // 打开数据库

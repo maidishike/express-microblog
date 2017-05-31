@@ -371,3 +371,67 @@ form .form-control {
 .edit-group .btn-handle.btn-edit {
   right: 2rem;
 }
+
+/* line 3, ../sass/user.scss */
+.profile {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0.5rem;
+}
+/* line 6, ../sass/user.scss */
+.profile .profile-avatar {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+}
+/* line 8, ../sass/user.scss */
+.profile .profile-avatar .user-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
+  top: 0;
+  right: 0;
+}
+/* line 16, ../sass/user.scss */
+.profile .profile-info {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+}
+
+/* line 20, ../sass/user.scss */
+.profile-group {
+  padding: 0.5rem;
+}
+
+/* line 23, ../sass/user.scss */
+.profile-me {
+  display: -webkit-flex;
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+/* line 27, ../sass/user.scss */
+.profile-me .icon {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* line 35, ../sass/user.scss */
+.profile-me .icon-article {
+  background-image: url("/images/icon-common/icon-article.svg");
+}
+/* line 38, ../sass/user.scss */
+.profile-me .icon-comment {
+  background-image: url("/images/icon-common/icon-comment.svg");
+}
+/* line 41, ../sass/user.scss */
+.profile-me .profile-link {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  padding-left: 0.5rem;
+  color: #333;
+}

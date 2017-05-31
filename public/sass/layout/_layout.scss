@@ -21,6 +21,7 @@ textarea{
 }
 .layer{
   position: fixed;
+  display: block;
   z-index: 10;
   top: 0.2rem;
   font-size: .8rem;
@@ -34,11 +35,11 @@ textarea{
 }
 @include keyframes(opacityIt){
   0%{
-    display: block;
+    visibility: visible;
     opacity: 1;
   }
   100%{
-    display: none;
+    visibility: hidden;
     opacity: 0;
   }
 };

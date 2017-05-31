@@ -12,7 +12,7 @@ function DoViewByName(req, res) {
       if(err) {
         posts = [];
       }
-      res.render('user', {
+      res.render('userAllArticles', {
         title: user.name,
         user: req.session.user,
         posts: posts,

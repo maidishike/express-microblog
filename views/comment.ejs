@@ -4,7 +4,7 @@
     <div class="comments">
       <div class="comment-content"> <%- comment.content %> </div>
       <p class="comment-time">
-        <a class="comment-author" href="<%= comment.website %>"><%= comment.name %></a>
+        <a class="comment-author" href="/u/<%= comment.name %>"><%= comment.name %></a>
         <span>评论于&nbsp;<%= comment.time %></span>
       </p>
     </div>
@@ -12,7 +12,7 @@
   <form class="comment-form" method="post">
     <div class="comment-issue">
       <% if(user){ %>
-        <a href="/u/<%= user.name %>" class="user-icon"></a>
+        <a href="/u/<%= user.name %>" style="background-image:url(<%= user.avatar %>)" class="user-icon"></a>
       <% }else{ %>
         <a href="/login" class="user-icon"></a>
       <% } %>

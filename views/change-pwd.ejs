@@ -1,0 +1,22 @@
+<%- include ./layout/asset/head.ejs %>
+<link rel="stylesheet" href="/stylesheets/register.css">
+<%- include ./layout/asset/body.ejs %>
+<form id="register" method="post">
+  <div class="form-group">
+    <label for="userPwd">旧密码</label>
+    <input type="password" class="form-control" id="userPwd" name="password" value="" />
+  </div>
+  <div class="form-group">
+    <label for="userConfirmPwd">新密码</label>
+    <input class="form-control" type="password" name="password-repeat" id="userConfirmPwd" value="" />
+  </div>
+  <div class="form-group">
+    <label for="userConfirmPwd">确认新密码</label>
+    <input class="form-control" type="password" name="password-repeat" id="userConfirmPwd" value="" />
+  </div>
+  <button id="submit" class="btn btn-primary w100" type="button">确认修改</button>
+</form>
+</article>
+</div>
+<script src="/js/reg.js" charset="utf-8"></script>
+<%- include ./layout/footer %>

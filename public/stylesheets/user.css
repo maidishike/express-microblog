@@ -410,6 +410,21 @@ form .form-control {
   padding: 0.5rem 0;
 }
 /* line 27, ../sass/user.scss */
+.profile-me:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #919191;
+  border-right: 1px solid #919191;
+  width: 0.32rem;
+  height: 0.32rem;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+}
+/* line 38, ../sass/user.scss */
 .profile-me .icon {
   display: block;
   width: 1rem;
@@ -418,15 +433,19 @@ form .form-control {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-/* line 35, ../sass/user.scss */
+/* line 46, ../sass/user.scss */
 .profile-me .icon-article {
   background-image: url("/images/icon-common/icon-article.svg");
 }
-/* line 38, ../sass/user.scss */
+/* line 49, ../sass/user.scss */
 .profile-me .icon-comment {
   background-image: url("/images/icon-common/icon-comment.svg");
 }
-/* line 41, ../sass/user.scss */
+/* line 52, ../sass/user.scss */
+.profile-me .icon-password {
+  background-image: url("/images/icon-common/icon-password.svg");
+}
+/* line 55, ../sass/user.scss */
 .profile-me .profile-link {
   -webkit-flex: 1 1 0;
   flex: 1 1 0;
@@ -436,12 +455,12 @@ form .form-control {
   color: #333;
 }
 
-/* line 49, ../sass/user.scss */
+/* line 63, ../sass/user.scss */
 form {
   display: none;
 }
 
-/* line 52, ../sass/user.scss */
+/* line 66, ../sass/user.scss */
 .input-avatar {
   display: none;
 }

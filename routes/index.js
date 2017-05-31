@@ -127,6 +127,17 @@ router.get('/remove/:name/:day/:title', doDelete);
 // 新增评论
 router.post('/u/:name/:day/:title', doComment);
 
+// 修改密码
+router.get('/changePwd', (req, res) => {
+  res.render('change-pwd', {
+    title: '修改密码',
+    user: req.session.user,
+    success: req.flash('success').toString(),
+    error: req.flash('error').toString(),
+    pathname: ''
+  });
+});
+
 // 判断是否登录
 function checkLogin (req, res, next) {
   if (!req.session.user) {

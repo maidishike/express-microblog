@@ -24,6 +24,17 @@
   @include display-flex;
   border-top: 1px solid #ccc;
   padding: 0.5rem 0;
+  &:after{
+    content: "";
+    display: block;
+    border-bottom: 1px solid #919191;
+    border-right: 1px solid #919191;
+    width: 0.32rem;
+    height: 0.32rem;
+    @include transform(rotate(-45deg));
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+  }
   .icon{
     display: block;
     width: 1rem;
@@ -37,6 +48,9 @@
   }
   .icon-comment{
     background-image: url('/images/icon-common/icon-comment.svg');
+  }
+  .icon-password{
+    background-image: url('/images/icon-common/icon-password.svg');
   }
   .profile-link{
     @include flex(1 1 0);

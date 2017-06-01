@@ -100,10 +100,23 @@ User.upload = function(name, avatar, callback) {
 }
 
 // 修改用户密码
-User.changePwd = (oldPwd, newPwd, callback) => {
+User.changePwd = (name, newPwd, callback) => {
   mongodb.open((err, db) => {
     if (err) {
       return callback(err)
     }
+    db.collection('users', (err, collection) => {
+      collection.update({
+        'name': name
+      }, {
+        $set: {'password': newPwd}
+      }, (err) => {
+        mongodb.close();
+        if (err) {
+          return callback(err);
+        }
+        callback(null)
+      });
+    });
   })
 };

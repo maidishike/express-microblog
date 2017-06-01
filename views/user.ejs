@@ -28,10 +28,18 @@
      <i class="icon icon-comment"></i>
      <p class="profile-link" >我的评论</p>
    </a>
-   <a href="/changePwd" class="profile-me">
-     <i class="icon icon-password"></i>
-     <p class="profile-link" >修改密码</p>
-   </a>
+   <% if(user.name == username) { %>
+     <a href="/changePwd" class="profile-me">
+       <i class="icon icon-password"></i>
+       <p class="profile-link" >修改密码</p>
+     </a>
+    <% } %>
+    <% if(user.name == username) { %>
+      <a href="/logout" class="profile-me">
+        <i class="icon icon-logout"></i>
+        <p class="profile-link" >退出</p>
+      </a>
+     <% } %>
  </div>
 </article>
 </div>

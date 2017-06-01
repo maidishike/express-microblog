@@ -15,6 +15,7 @@ var doDelete = require('./doDelete');
 var doEdit = require('./doEdit');
 var doComment =  require('./doComment');
 var userInfo =  require('./users');
+var doChangePwd = require('./doChangePwd');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -125,20 +126,15 @@ router.get('/remove/:name/:day/:title', checkLogin);
 router.get('/remove/:name/:day/:title', doDelete);
 
 // 新增评论
+router.post('/edit/:name/:day/:title', checkLogin);
 router.post('/u/:name/:day/:title', doComment);
 
 // 修改密码
-router.get('/changePwd', (req, res) => {
-  res.render('change-pwd', {
-    title: '修改密码',
-    user: req.session.user,
-    success: req.flash('success').toString(),
-    error: req.flash('error').toString(),
-    pathname: ''
-  });
-});
+router.get('/changePwd', checkLogin);
+router.get('/changePwd', doChangePwd.ChangePwd);
+router.post('/changePwd', doChangePwd.DoChangePwd);
 
-// 判断是否登录
+// 判断是否登录,登录才能进行其他操作
 function checkLogin (req, res, next) {
   if (!req.session.user) {
     return res.redirect('/login');
@@ -146,7 +142,7 @@ function checkLogin (req, res, next) {
   next();
 }
 
-// 判断是否已经登录
+// 判断是否已经登录, 已经登录则无法进入注册，登录
 function checkNotLogin (req, res, next) {
   if (req.session.user) {
     return res.redirect('back'); // 返回之前的页面

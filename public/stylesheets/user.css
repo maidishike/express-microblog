@@ -446,6 +446,10 @@ form .form-control {
   background-image: url("/images/icon-common/icon-password.svg");
 }
 /* line 55, ../sass/user.scss */
+.profile-me .icon-logout {
+  background-image: url("/images/icon-common/icon-logout.svg");
+}
+/* line 58, ../sass/user.scss */
 .profile-me .profile-link {
   -webkit-flex: 1 1 0;
   flex: 1 1 0;
@@ -455,12 +459,12 @@ form .form-control {
   color: #333;
 }
 
-/* line 63, ../sass/user.scss */
+/* line 66, ../sass/user.scss */
 form {
   display: none;
 }
 
-/* line 66, ../sass/user.scss */
+/* line 69, ../sass/user.scss */
 .input-avatar {
   display: none;
 }

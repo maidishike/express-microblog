@@ -52,6 +52,9 @@
   .icon-password{
     background-image: url('/images/icon-common/icon-password.svg');
   }
+  .icon-logout{
+    background-image: url('/images/icon-common/icon-logout.svg');
+  }
   .profile-link{
     @include flex(1 1 0);
     font-size: 0.7rem;
